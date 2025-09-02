@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mumtaz P.G. College</title>
+  <link rel="stylesheet" href="Management_board.css">
+
+<!-- ===== HEADER ===== -->
+<header class="college-header">
+  <!-- Left Logo -->
+  <div class="header-left">
+    <img src="logo.png" alt="College Logo" class="college-logo">
+  </div>
+
+  <!-- Center Titles -->
+  <div class="header-center">
+    <h1 class="eng-title">MUMTAZ P.G. COLLEGE</h1>
+    <h2 class="urdu-title">ممتاز پی جی کالج لکھنؤ</h2>
+    <p class="tagline">(Associated to University of Lucknow & Aided by Govt. of U.P)</p>
+  </div>
+
+  <!-- Right Hamburger (only for mobile) -->
+  <div class="header-right">
+    <span class="hamburger" onclick="toggleSidebar()">☰</span>
+  </div>
+</header>
+
+<!-- ===== SIDEBAR (MOBILE NAV) ===== -->
+<div class="sidebar" id="mobileSidebar">
+  <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+
+  <a href="index.html">🏠 Home</a>
+  <a href="#" onclick="toggleSubmenu('mbSub'); return false;">👥 Management Board ▾</a>
+  <div id="mbSub" class="submenu" style="display: none;">
+    <a href="principal.html">Principal</a>
+    <a href="vice-principal.html">Vice Principal</a>
+    <a href="staff.html">Staff Members</a>
+  </div>
+  <a href="About-Us.html">ℹ️ About Us</a>
+  <a href="Courses.html">📚 Courses</a>
+  <a href="admission-info.html">📝 Admission</a>
+  <a href="#">📞 Contact</a>
+  <a href="#">👤 Committees</a>
+  <a href="#">🖼️ Photo Gallery</a>
+</div>
+
+<!-- ===== NAVIGATION (DESKTOP) ===== -->
+<nav class="desktop-nav">
+  <a href="index.html">🏠 Home</a>
+  <a href="#">👥 Management Board</a>
+  <a href="About-Us.html">ℹ️ About Us</a>
+
+  <div class="has-submenu">
+    <a href="Academics.html">📚 Academics</a>
+    <div class="submenu">
+      <a href="art-faculty.html">🎨 Art Faculty</aManagement_board.css
+      <a href="commerce-faculty.html">💼 Commerce Faculty</a>
+      <a href="science-faculty.html">🔬 Science Faculty</a>
+    </div>
+  </div>
+
+  <a href="admission-info-1.html">📝 Admission</a>
+  <a href="#">📞 Contact</a>
+  <a href="#">👤 Committees</a>
+  <a href="#">🖼️ Photo Gallery</a>
+</nav>
+
+<!-- ===== JS ===== -->
+<script>
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.getElementById("mobileSidebar");
+    sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+  }
+
+  // Submenu toggle
+  function toggleSubmenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+  }
+</script>
+
+</body>
+</html>
+<!-- ==============================
+   Committee of Management Section
+================================= -->
+
+<style>
+.committee-board {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  font-family: "Times New Roman", serif;
+}
+
+.committee-board h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: maroon;
+}
+
+.committee-board h3 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Desktop Table View */
+.committee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.committee-table th,
+.committee-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 24px;
+}
+
+.committee-table th {
+  background: maroon;
+  color: white;
+}
+
+.committee-table img {
+  width: 60px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #999;
+}
+
+/* Mobile Card View */
+@media (max-width: 768px) {
+  .committee-table,
+  .committee-table thead,
+  .committee-table tbody,
+  .committee-table th,
+  .committee-table td,
+  .committee-table tr {
+    display: block;
+  }
+
+  .committee-table thead {
+    display: none; /* table header hide */
+  }
+
+  .committee-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .committee-table td {
+    border: none;
+    text-align: left;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+
+  .committee-table td img {
+    width: 80px;
+    height: 90px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .committee-table td:nth-child(1) { font-weight: bold; }
+}
+</style>
+
+<div class="committee-board">
+  <h2>THE COMMITTEE OF MANAGEMENT</h2>
+  <h3>(Session 2025–26)</h3>
+
+  <table class="committee-table">
+    <thead>
+      <tr>
+        <th>S. No.</th>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Designation</th>
+      </tr>
+    </head>
+    <tbody>
+      <tr><td>1</td><td><img src="photos/suleman.jpg" alt=""></td><td>Mr. Mohammad Suleman</td><td>President</td></tr>
+      <tr><td>2</td><td><img src="photos/syed_husain.jpg" alt=""></td><td>Mr. Syed Husain</td><td>Vice President</td></tr>
+      <tr><td>3</td><td><img src="photos/musharraf.jpg" alt=""></td><td>Mr. Haji Mohammad Musharraf Husain</td><td>Vice President</td></tr>
+      <tr><td>4</td><td><img src="photos/athar.jpg" alt=""></td><td>Mr. Athar Nabi</td><td>Secretary</td></tr>
+      <tr><td>5</td><td><img src="photos/maulana.jpg" alt=""></td><td>Mr. Maulana Khalid Rasheed Firangi Mahli</td><td>Member</td></tr>
+      <tr><td>6</td><td><img src="photos/shoeb.jpg" alt=""></td><td>Mr. Mohammad Shoeb (Advocate)</td><td>Member</td></tr>
+      <tr><td>7</td><td><img src="photos/hameed.jpg" alt=""></td><td>Mr. Hameed Iqbal Siddiqui (Advocate)</td><td>Member</td></tr>
+      <tr><td>8</td><td><img src="photos/kafil.jpg" alt=""></td><td>Mr. Syed Kafil Ahmad (Advocate)</td><td>Member</td></tr>
+      <tr><td>9</td><td><img src="photos/ghufran.jpg" alt=""></td><td>Mr. Mohammad Ghufran Naseem</td><td>Member</td></tr>
+      <tr><td>10</td><td><img src="photos/ammar.jpg" alt=""></td><td>Dr. Ammar Anis Nagrami</td><td>Member</td></tr>
+      <tr><td>11</td><td><img src="photos/halcem.jpg" alt=""></td><td>Mr. Mohammad Halcem</td><td>Member</td></tr>
+      <tr><td>12</td><td><img src="photos/qamrul.jpg" alt=""></td><td>Dr. Syed Qamrul Hasan Kazmi</td><td>Member</td></tr>
+      <tr><td>13</td><td><img src="photos/bilal.jpg" alt=""></td><td>Mr. Syed Bilal Noorani</td><td>Member</td></tr>
+      <tr><td>14</td><td><img src="photos/adeel.jpg" alt=""></td><td>Mr. Adeel Ahmad Siddiqui</td><td>Member</td></tr>
+      <tr><td>15</td><td><img src="photos/naseem.jpg" alt=""></td><td>Prof. Naseem Ahmad Khan</td><td>Officiating Principal</td></tr>
+      <tr><td>16</td><td><img src="photos/liyakat.jpg" alt=""></td><td>Dr. Liyakat Ali</td><td>Teachers' Representative</td></tr>
+      <tr><td>17</td><td><img src="photos/habib.jpg" alt=""></td><td>Dr. Mohd. Habib</td><td>Teachers' Representative</td></tr>
+      <tr><td>18</td><td><img src="photos/shad.jpg" alt=""></td><td>Dr. Shad Ahmad</td><td>Teachers' Representative</td></tr>
+      <tr><td>19</td><td><img src="photos/faiyaz.jpg" alt=""></td><td>Dr. Naheed Faiyaz Kidwai</td><td>Teachers' Representative</td></tr>
+      <tr><td>20</td><td><img src="photos/amir.jpg" alt=""></td><td>Dr. Amir Husain Siddiqui</td><td>Teachers' Representative</td></tr>
+      <tr><td>21</td><td><img src="photos/mohd_naseem.jpg" alt=""></td><td>Dr. Mohd. Naseem Siddiqui</td><td>Teachers' Representative</td></tr>
+      <tr><td>22</td><td><img src="photos/noorbano.jpg" alt=""></td><td>Mrs. Noor Bano</td><td>Non Teaching</td></tr>
+    </body>
+  </table>
+</div>
