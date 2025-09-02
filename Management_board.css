@@ -1,0 +1,219 @@
+/* ==============================
+   HEADER (Desktop + Mobile)
+================================ */
+/* Global font for entire website */
+body {
+  font-family: "Times New Roman", serif;
+}
+.college-header {
+  background: #154734;       /* Green background */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* Desktop: left aligned */
+  padding: 15px 30px;
+  flex-wrap: nowrap;
+}
+
+/* Logo */
+.college-logo {
+  height: 220px;  
+  width: auto;
+  margin-right: 20px;
+  display: block;
+}
+
+/* Center Title Block */
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+/* English Font Import */
+@font-face {
+  font-family: 'ArmWrestler';
+  src: url('ArmWrestler.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* English Title */
+.eng-title {
+  font-size: 6em;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'ArmWrestler', serif;
+  color: white;
+}
+
+/* Urdu Font Import */
+@font-face {
+  font-family: 'JameelNoori';
+  src: url('JameelNooriNastaleeqKasheeda.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Urdu Title */
+.urdu-title {
+  font-family: 'JameelNoori', serif;
+  font-size: 3.5em;
+  margin: 8px 0 0 0;
+  text-align: center;
+  color: white;
+}
+
+/* Tagline */
+.tagline {
+  font-size: 1.5em;
+  margin: 5px 0 0;
+  font-family: "Times New Roman", serif;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+/* Responsive Header (mobile view) */
+@media (max-width: 768px) {
+  .college-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+  .college-logo {
+    height: 80px;
+    margin: 0 0 10px 0;
+  }
+  .eng-title {
+    font-size: 1.8em;
+  }
+  .urdu-title {
+    font-size: 1.2em;
+  }
+  .tagline {
+    font-size: 0.9em;
+  }
+}
+
+
+/* ==============================
+   NAVIGATION (Desktop Menu)
+================================ */
+nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  background: #000000;
+  flex-wrap: wrap;
+}
+
+nav a, nav .has-submenu > a {
+  color:#ffffff;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  background: maroon;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #551ce4;
+}
+
+/* Submenu */
+nav .has-submenu {
+  position: relative;
+}
+nav .has-submenu > a::after {
+  content: " ▾";
+  font-size: 12px;
+}
+nav .submenu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 220px;
+  background: #e3e3e3;
+  border: 1px solid maroon;
+  display: none;
+  z-index: 1000;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+nav .submenu a {
+  background: maroon !important;
+  color: white !important;
+  display: block;
+  padding: 10px 12px;
+  border-bottom: 1px solid #922;
+}
+nav .submenu a:hover {
+  background: #a00000 !important;
+  color: #fff !important;
+}
+nav .has-submenu:hover .submenu {
+  display: block;
+}
+
+/* ==============================
+   HAMBURGER + SIDEBAR (Mobile)
+================================ */
+/* Hamburger button */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;   /* Default hidden (desktop) */
+  padding: 10px;
+  background: maroon;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;          /* hidden by default */
+  height: 100%;
+  width: 230px;
+  background: maroon;
+  color: white;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 9999;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  border-radius: 0 10px 10px 0;
+}
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid #922;
+}
+.sidebar a:hover {
+  background-color: #a33;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ==============================
+   RESPONSIVE CONTROL
+================================ */
+/* ✅ Sirf mobile ke liye */
+@media (max-width: 768px) {
+  .hamburger { display: block; }   /* hamburger visible */
+  nav { display: none; }           /* desktop nav hide */
+}
+
+/* ✅ Sirf desktop ke liye */
+@media (min-width: 769px) {
+  .sidebar { display: none; }      /* sidebar hide */
+}
