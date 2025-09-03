@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mumtaz P.G. College</title>
+  <link rel="stylesheet" href="arab-culture.css">
+</head>
+<body>
+<!-- ===== TOP BAR (Date & Time) ===== -->
+<div class="top-bar">
+  <span id="date-time"></span>
+</div>
+
+<style>
+  .top-bar {
+    background: #333;         /* गहरा बैकग्राउंड */
+    color: #fff;              /* सफेद टेक्स्ट */
+    text-align: right;        /* दाहिने तरफ */
+    padding: 5px 20px;        /* ऊपर नीचे जगह */
+    font-family: "Cambria", serif;
+    font-size: 14px;
+  }
+</style>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = {
+      weekday: 'long', year: 'numeric', month: 'long', 
+      day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+    };
+    document.getElementById("date-time").textContent = now.toLocaleString("en-IN", options);
+  }
+
+  setInterval(updateDateTime, 1000); // हर 1 सेकंड पर update
+  updateDateTime(); // पहले से कॉल कर दो ताकि तुरंत दिखे
+</script>
+<!-- ===== HEADER ===== -->
+<header class="college-header">
+  <!-- Left Logo -->
+  <div class="header-left">
+    <img src="logo.png" alt="College Logo" class="college-logo">
+  </div>
+
+  <!-- Center Titles -->
+  <div class="header-center">
+    <h1 class="eng-title">MUMTAZ P.G. COLLEGE</h1>
+    <h2 class="urdu-title">ممتاز پی جی کالج لکھنؤ</h2>
+    <p class="tagline">(Associated to University of Lucknow & Aided by Govt. of U.P)</p>
+  </div>
+
+  <!-- Right Hamburger -->
+  <div class="header-right">
+    <span class="hamburger" onclick="toggleSidebar()">☰</span>
+  </div>
+</header>
+
+<!-- ===== SIDEBAR (Mobile Nav) ===== -->
+<div class="sidebar" id="mobileSidebar">
+  <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+
+  <a href="index.html">🏠 Home</a>
+  <a href="#" onclick="toggleSubmenu('mbSub'); return false;">👥 Management Board ▾</a>
+  <div id="mbSub" class="submenu" style="display: none;">
+    <a href="principal.html">Principal</a>
+    <a href="vice-principal.html">Vice Principal</a>
+    <a href="staff.html">Staff Members</a>
+  </div>
+  <a href="About-Us.html">ℹ️ About Us</a>
+  <a href="Courses.html">📚 Courses</a>
+  <a href="admission-info.html">📝 Admission</a>
+  <a href="#">📞 Contact</a>
+  <a href="#">👤 Committees</a>
+  <a href="#">🖼️ Photo Gallery</a>
+</div>
+
+<!-- ===== NAVIGATION (DESKTOP) ===== -->
+<nav class="desktop-nav">
+  <a href="index.html">🏠 Home</a>
+<nav>
+  <div class="has-submenu">
+    <a href="#">ℹ️ About Us</a>
+    <div class="submenu">
+      <a href="About_us/About_us.html">About the college</a>
+      <a href="Tarana-a-mumtaz/Tarana_a_mumtaz.html">तराना-ए-मुमताज़</a>
+      <a href="Golden Jubilee/Golden_jubli.html">Golden Jubilee</a>
+      <a href="Admission_Procedure.html">Admission Procedure</a>
+      <a href="Management_board/Management_board.html">👥 Management Board</a>
+      <a href="Committee/comittee.html">Committees</a>
+      <a href="Teaching & Non-teaching/Teaching_&_Non-teaching.html">
+        Teaching & Non-teaching staff
+      </a>
+
+      <!-- Student Committees with Submenu -->
+      <div class="has-submenu">
+        <a href="#">🎓 Student Committees</a>
+        <div class="submenu">
+          <a href="literary-society.html">📖 Literary Society</a>
+          <a href="Arab-culture-association.html">💼 Arab-culture Association</a>
+        </div>
+      </div>
+      <a href="#">📞 Contact</a>
+    </div>
+  </div>
+</nav>
+<nav>
+<div class="has-submenu">
+    <a href="#">📚 Academics</a>
+    <div class="submenu">
+      
+      <div class="has-submenu">
+  <a href="#">🎨 Arts Faculty</a>
+  <div class="submenu">
+    <a href="arab-culture.html">Department of Arab Culture</a>
+    <a href="Faculty of Art/Faculty of English/Department_of_english.html">Department of English</a>
+    <a href="history.html">Department of History</a>
+    <a href="Arab-culture.html">Department of Arab-culture</a>
+    <a href="Arab-culture.html">Department of Arab-culture</a>
+    <a href="political-science.html">Department of Political Science</a>
+    <a href="sociology.html">Department of Sociology</a>
+    <a href="urdu.html">Department of Urdu</a>
+    <a href="physical-education.html">Department of Physical Education</a>
+  </div>
+</div>
+
+      
+        <a href="Arab-culture/Arab-culture.html">💼 Arab-culture Faculty</a>
+        
+
+      <div class="has-submenu">
+  <a href="#">🔬 Science Faculty</a>
+  <div class="submenu">
+    <a href="Faculty of science/Department of botany/Department_of_Botany.html">Department of Botany</a>
+    <a href="chemistry.html">Department of Chemistry</a>
+    <a href="computer-science.html">Department of Computer Science</a>
+    <a href="mathematics.html">Department of Mathematics</a>
+    <a href="physics.html">Department of Physics</a>
+    <a href="zoology.html">Department of Zoology</a>
+  </div>
+</div>
+   <a href="nss.html">🪢 NSS</a>
+   <a href="ncc.html">🎖️ NCC</a>
+  <a href="library.html">📚 Library</a>
+</nav>
+
+  <a href="admission-info-1.html">📝 Admission</a>
+  <a href="Career/career.html">👤 Examination</a>
+  <!-- Student Corner -->
+<div class="has-submenu">
+  <a href="#" onclick="toggleSubmenu(this)">🎓 Career</a>
+  <div class="submenu">
+    <a href="literary-society.html">📖 Literary Society</a>
+    <a href="Arab-culture-association.html">💼 Arab-culture Association</a>
+  </div>
+</div>
+  <a href="#">️📖NAAC/IQAC</a>
+    <a href="#">🖼️NIRF</a>
+  <a href="#">🖼️ Gallery</a>
+</nav>
+<!-- ===== JS ===== -->
+<script>
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.getElementById("mobileSidebar");
+    sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+  }
+
+  // Submenu toggle inside sidebar
+  function toggleSubmenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+  }
+</script>
+  <script>
+document.querySelectorAll(".has-submenu > a").forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    let parent = this.parentElement;
+    let submenu = parent.querySelector(".submenu");
+
+    if (!submenu) return;
+
+    if (submenu.style.display === "block") {
+      submenu.style.display = "none";
+      return;
+    }
+
+    let siblings = parent.parentElement.querySelectorAll(":scope > .has-submenu .submenu");
+    siblings.forEach(sib => {
+      if (sib !== submenu) sib.style.display = "none";
+    });
+
+    submenu.style.display = "block";
+  });
+});
+</script>
+<!-- ==============================
+     Arab-culture SECTION
+================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Department of Arab-culture - Mumtaz P.G. College</title>
+</head>
+<body>
+
+  <!-- Department Header -->
+  <div class="dept-header">
+    <h1>Department of Arab-culture</h1>
+    <p>Faculty of Arab-culture - Mumtaz P.G. College</p>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="dept-container">
+    <!-- Sidebar Menu -->
+    <div class="dept-sidebar">
+      <button onclick="openTab('about')" class="active">About</button>
+      <button onclick="openTab('hod')">Head of Department</button>
+      <button onclick="openTab('faculty')">Faculty Members</button>
+      <button onclick="openTab('programmes')">Programmes</button>
+      <button onclick="openTab('timetable')">Time Table</button>
+      <button onclick="openTab('notices')">Notices</button>
+      <button onclick="openTab('research')">Research & Achievements</button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="dept-content">
+      <!-- About -->
+      <div id="about" class="tab-content active">
+        <h2>About the Department</h2>
+        <p>The Department of Arab-culture at Mumtaz P.G. College is dedicated to academic excellence, professional skill development, and preparing students for careers in business, management, and finance.</p>
+      </div>
+
+      <!-- HOD -->
+      <div id="hod" class="tab-content">
+        <h2>Head of Department</h2>
+        <div class="hod-box">
+          <img src="Prof._Mohammad_Salman_Khan.jpg" alt="HOD Arab-culture">
+          <h2>Prof. Mohammad Salman Khan</h2>
+          <p>Professor, Head of Department</p>
+          <p>Department of Arab-culture</p>
+        </div>
+      </div>
+
+      <!-- Faculty -->
+      <div id="faculty" class="tab-content">
+        <h2>Faculty Members</h2>
+
+<div class="faculty-container">
+  <div class="faculty-card">
+    <img src="Prof._Mohammad_Salman_Khan.jpg" alt="Prof. Mohammad Salman Khan">
+    <h3>Prof. Mohammad Salman Khan</h3>
+    <p>Assistant Professor, H.O.D.</p>
+  </div>
+
+  <div class="faculty-card">
+    <img src="Dr._Naheed_Faiyaz_Kidwai.jpg" alt="Dr. Naheed Faiyaz Kidwai">
+    <h3>Dr. Naheed Faiyaz Kidwai</h3>
+    <p>Assistant Professor</p>
+  </div>
+
+  <div class="faculty-card">
+    <img src="Dr._Amir_Husain_Siddiqui.jpg" alt="Dr. Amir Husain Siddiqui">
+    <h3>Dr. Amir Husain Siddiqui</h3>
+    <p>Assistant Professor</p>
+  </div>
+      </div>
+
+      <!-- Programmes -->
+      <div id="programmes" class="tab-content">
+        <h2>Programmes</h2>
+        <ul>
+          <li>B.Com (UG)</li>
+          <li>M.Com (PG)</li>
+        </ul>
+      </div>
+
+      <!-- Time Table -->
+      <div id="timetable" class="tab-content">
+        <h2>Time Table</h2>
+        <p>Time table will be uploaded soon.</p>
+      </div>
+
+      <!-- Notices -->
+      <div id="notices" class="tab-content">
+        <h2>Notices</h2>
+        <p>No new notices.</p>
+      </div>
+
+      <!-- Research -->
+      <div id="research" class="tab-content">
+        <h2>Research & Achievements</h2>
+        <p>The Arab-culture Department has been active in research, seminars, and publications in the fields of business management, finance, and entrepreneurship.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function openTab(tabId) {
+      // hide all tabs
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      // remove active from all buttons
+      document.querySelectorAll('.dept-sidebar button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      // show selected tab
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mumtaz P.G. College</title>
+
+  <style>
+    /* ==============================
+       GLOBAL FONT
+    ================================ */
+    body {
+      font-family: "Times New Roman", serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ==============================
+       HEADER
+    ================================ */
+    .college-header {
+      background: #154734;       /* Green background */
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;  
+      padding: 15px 30px;
+      flex-wrap: nowrap;
+    }
+
+    .college-logo {
+      height: 300px;
+      width: auto;
+      margin-right: 20px;
+      display: block;
+    }
+
+    .header-center {
+      flex: 1;
+      text-align: center;
+    }
+/* English Font Import */
+@font-face {
+  font-family: 'ArmWrestler';
+  src: url('ArmWrestler.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+    /* English Title */
+    .eng-title {
+      font-size: 5.5em;
+      font-family: 'ArmWrestler', serif;
+      font-weight: bold;
+      margin: 0;
+      color: white;
+    }
+/* Urdu Font Import */
+@font-face {
+  font-family: 'JameelNoori';
+  src: url('JameelNooriNastaleeqKasheeda.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+    /* Urdu Title */
+    .urdu-title {
+      font-size: 3.5em;
+      font-family: 'JameelNoori', serif;
+      margin: 5px 0 0 0;
+      text-align: center;
+      color: white;
+    }
+
+    .tagline {
+      font-size: 1.8em;
+      margin: 5px 0 0;
+      color: #e0e0e0;
+      text-align: center;
+    }
+
+    /* Responsive Header */
+    @media (max-width: 768px) {
+      .college-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+      }
+      .college-logo {
+        height: 80px;
+        margin: 0 0 10px 0;
+      }
+      .eng-title { font-size: 1.8em; }
+      .urdu-title { font-size: 1.2em; }
+      .tagline { font-size: 0.9em; }
+    }
+
+    /* ==============================
+       NAVIGATION (Desktop)
+    ================================ */
+    nav.desktop-nav {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      background: #000000;
+      flex-wrap: wrap;
+    }
+
+    nav.desktop-nav a, nav.desktop-nav .has-submenu > a {
+      color:#ffffff;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      background: maroon;
+      transition: background 0.3s;
+    }
+
+    nav.desktop-nav a:hover {
+      background: #551ce4;
+    }
+
+    nav.desktop-nav .has-submenu {
+      position: relative;
+    }
+
+    nav.desktop-nav .has-submenu > a::after {
+      content: " ▾";
+      font-size: 12px;
+    }
+
+    nav.desktop-nav .submenu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      min-width: 220px;
+      background: #e3e3e3;
+      border: 1px solid maroon;
+      display: none;
+      z-index: 1000;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    nav.desktop-nav .submenu a {
+      background: maroon !important;
+      color: white !important;
+      display: block;
+      padding: 10px 12px;
+      border-bottom: 1px solid #922;
+    }
+
+    nav.desktop-nav .submenu a:hover {
+      background: #a00000 !important;
+      color: #fff !important;
+    }
+
+    nav.desktop-nav .has-submenu:hover .submenu {
+      display: block;
+    }
+
+    /* ==============================
+       HAMBURGER (Mobile)
+    ================================ */
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;   /* default hidden */
+      padding: 10px;
+      background: maroon;
+      color: white;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;  /* hidden default */
+      height: 100%;
+      width: 230px;
+      background: maroon;
+      color: white;
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 9999;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #922;
+    }
+
+    .sidebar a:hover {
+      background-color: #a33;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Responsive Controls */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }    /* mobile me hamburger visible */
+      nav.desktop-nav { display: none; } /* mobile me desktop nav hidden */
+    }
+
+    @media (min-width: 769px) {
+      .sidebar { display: none; }       /* desktop me sidebar hidden */
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="college-header">
+  <!-- Left Logo -->
+  <div class="header-left">
+    <img src="logo.png" alt="College Logo" class="college-logo">
+  </div>
+
+  <!-- Center Titles -->
+  <div class="header-center">
+    <h1 class="eng-title">MUMTAZ P.G. COLLEGE</h1>
+    <h2 class="urdu-title">ممتاز پی جی کالج لکھنؤ</h2>
+    <p class="tagline">(Associated to University of Lucknow & Aided by Govt. of U.P)</p>
+  </div>
+
+  <!-- Right Hamburger -->
+  <div class="header-right">
+    <span class="hamburger" onclick="toggleSidebar()">☰</span>
+  </div>
+</header>
+
+<!-- ===== SIDEBAR (Mobile Nav) ===== -->
+<div class="sidebar" id="mobileSidebar">
+  <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+
+  <a href="index.html">🏠 Home</a>
+  <a href="#" onclick="toggleSubmenu('mbSub'); return false;">👥 Management Board ▾</a>
+  <div id="mbSub" class="submenu" style="display: none;">
+    <a href="principal.html">Principal</a>
+    <a href="vice-principal.html">Vice Principal</a>
+    <a href="staff.html">Staff Members</a>
+  </div>
+  <a href="About-Us.html">ℹ️ About Us</a>
+  <a href="Courses.html">📚 Courses</a>
+  <a href="admission-info.html">📝 Admission</a>
+  <a href="#">📞 Contact</a>
+  <a href="#">👤 Committees</a>
+  <a href="#">🖼️ Photo Gallery</a>
+</div>
+
+<!-- ===== NAVIGATION (Desktop Nav) ===== -->
+<nav class="desktop-nav">
+  <a href="index.html">🏠 Home</a>
+  <a href="#">👥 Management Board</a>
+  <a href="About-Us.html">ℹ️ About Us</a>
+
+  <div class="has-submenu">
+    <a href="Academics.html">📚 Academics</a>
+    <div class="submenu">
+      <a href="art-faculty.html">🎨 Art Faculty</a>
+      <a href="commerce-faculty.html">💼 Commerce Faculty</a>
+      <a href="science-faculty.html">🔬 Science Faculty</a>
+    </div>
+  </div>
+
+  <a href="admission-info-1.html">📝 Admission</a>
+  <a href="#">📞 Contact</a>
+  <a href="#">👤 Committees</a>
+  <a href="#">🖼️ Photo Gallery</a>
+</nav>
+
+<!-- ===== JS ===== -->
+<script>
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.getElementById("mobileSidebar");
+    sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+  }
+
+  // Submenu toggle inside sidebar
+  function toggleSubmenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+  }
+</script>
+<!-- ==============================
+     COMMERCE SECTION
+================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Department of Commerce - Mumtaz P.G. College</title>
+  <style>
+    body {
+      font-family: "Cambria", serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #222;
+    }
+
+    /* Department Header */
+    .dept-header {
+      text-align: center;
+      background: maroon;
+      color: white;
+      padding: 25px 15px;
+    }
+    .dept-header h1 {
+      font-size: 40px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    .dept-header p {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    /* Layout */
+    .dept-container {
+      display: flex;
+      gap: 20px;
+      margin: 20px;
+    }
+
+    /* Sidebar */
+    .dept-sidebar {
+      width: 220px;
+      background: #f9f9f9;
+      border: 2px solid maroon;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .dept-sidebar button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: "Cambria", serif;
+      border-bottom: 1px solid #ddd;
+    }
+    .dept-sidebar button.active,
+    .dept-sidebar button:hover {
+      background: maroon;
+      color: white;
+    }
+
+    /* Content Area */
+    .dept-content {
+      flex: 1;
+      padding: 20px;
+      border: 2px solid maroon;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* HOD Box */
+    .hod-box {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .hod-box img {
+      width: 180px;
+      height: 200px;
+      object-fit: cover;
+      border: 2px solid maroon;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+    .hod-box h2 { color: maroon; margin: 10px 0 5px; }
+    .hod-box p { margin: 4px 0; font-size: 18px; }
+
+    /* Faculty Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: maroon;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .dept-container { flex-direction: column; }
+      .dept-sidebar { width: 100%; }
+      table { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Department Header -->
+  <div class="dept-header">
+    <h1>Department of Commerce</h1>
+    <p>Faculty of Commerce - Mumtaz P.G. College</p>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="dept-container">
+    <!-- Sidebar Menu -->
+    <div class="dept-sidebar">
+      <button onclick="openTab('about')" class="active">About</button>
+      <button onclick="openTab('hod')">Head of Department</button>
+      <button onclick="openTab('faculty')">Faculty Members</button>
+      <button onclick="openTab('programmes')">Programmes</button>
+      <button onclick="openTab('timetable')">Time Table</button>
+      <button onclick="openTab('notices')">Notices</button>
+      <button onclick="openTab('research')">Research & Achievements</button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="dept-content">
+      <!-- About -->
+      <div id="about" class="tab-content active">
+        <h2>About the Department</h2>
+        <p>The Department of Commerce at Mumtaz P.G. College is dedicated to academic excellence, professional skill development, and preparing students for careers in business, management, and finance.</p>
+      </div>
+
+      <!-- HOD -->
+      <div id="hod" class="tab-content">
+        <h2>Head of Department</h2>
+        <div class="hod-box">
+          <img src="photos/hod-commerce.jpg" alt="HOD Commerce">
+          <h2>Dr. Saheen Jamal</h2>
+          <p>Professor, Head of Department</p>
+          <p>Department of Commerce</p>
+        </div>
+      </div>
+
+      <!-- Faculty -->
+      <div id="faculty" class="tab-content">
+        <h2>Faculty Members</h2>
+        <style>
+.faculty-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.faculty-card {
+  width: 220px;
+  border: 2px solid maroon;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: "Cambria", serif;
+}
+
+.faculty-card img {
+  width: 120px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.faculty-card h3 {
+  margin: 8px 0 5px;
+  font-size: 18px;
+  color: maroon;
+}
+
+.faculty-card p {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+}
+</style>
+
+<div class="faculty-container">
+  <div class="faculty-card">
+    <img src="photos/shaheen_jamal.jpg" alt="Shaheen Jamal">
+    <h3>Dr. (Mrs.) Shaheen Jamal</h3>
+    <p>Assistant Professor, H.O.D.</p>
+  </div>
+
+  <div class="faculty-card">
+    <img src="photos/mayuri_rastogi.jpg" alt="Mayuri Rastogi">
+    <h3>Miss. Mayuri Rastogi</h3>
+    <p>Assistant Professor (on leave)</p>
+  </div>
+
+  <div class="faculty-card">
+    <img src="photos/wasif_ali.jpg" alt="Wasif Ali">
+    <h3>Dr. Wasif Ali</h3>
+    <p>Assistant Professor (on leave)</p>
+  </div>
+
+  <div class="faculty-card">
+    <img src="photos/naseem_siddiqui.jpg" alt="Mohammad Naseem Siddiqui">
+    <h3>Dr. Mohammad Naseem Siddiqui</h3>
+    <p>Assistant Professor</p>
+  </div>
+
+  <div class="faculty-card">
+    <img src="photos/romi_farooq.jpg" alt="Romi Farooqui">
+    <h3>Mr. Romi Farooqui</h3>
+    <p>Assistant Professor</p>
+  </div>
+
+  <div class="faculty-card">
+    <img src="photos/mohammad_abbas.jpg" alt="Mohammad Abbas">
+    <h3>Mr. Mohammad Abbas</h3>
+    <p>Assistant Professor (on leave)</p>
+  </div>
+</div>
+      </div>
+
+      <!-- Programmes -->
+      <div id="programmes" class="tab-content">
+        <h2>Programmes</h2>
+        <ul>
+          <li>B.Com (UG)</li>
+          <li>M.Com (PG)</li>
+        </ul>
+      </div>
+
+      <!-- Time Table -->
+      <div id="timetable" class="tab-content">
+        <h2>Time Table</h2>
+        <p>Time table will be uploaded soon.</p>
+      </div>
+
+      <!-- Notices -->
+      <div id="notices" class="tab-content">
+        <h2>Notices</h2>
+        <p>No new notices.</p>
+      </div>
+
+      <!-- Research -->
+      <div id="research" class="tab-content">
+        <h2>Research & Achievements</h2>
+        <p>The Commerce Department has been active in research, seminars, and publications in the fields of business management, finance, and entrepreneurship.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function openTab(tabId) {
+      // hide all tabs
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      // remove active from all buttons
+      document.querySelectorAll('.dept-sidebar button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      // show selected tab
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
