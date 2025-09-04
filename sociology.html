@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mumtaz P.G. College</title>
+  <link rel="stylesheet" href="academics.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="college-header">
+  <!-- Left Logo -->
+  <div class="header-left">
+    <img src="logo.png" alt="College Logo" class="college-logo">
+  </div>
+
+  <!-- Center Titles -->
+  <div class="header-center">
+    <h1 class="eng-title">MUMTAZ P.G. COLLEGE</h1>
+    <h2 class="urdu-title">ممتاز پی جی کالج لکھنؤ</h2>
+    <p class="tagline">(Associated to University of Lucknow & Aided by Govt. of U.P)</p>
+  </div>
+
+  <!-- Right Hamburger -->
+  <div class="header-right">
+    <span class="hamburger" onclick="toggleSidebar()">☰</span>
+  </div>
+</header>
+
+<!-- ===== SIDEBAR (Mobile Nav) ===== -->
+<div class="sidebar" id="mobileSidebar">
+  <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+
+  <a href="index.html">🏠 Home</a>
+  <a href="#" onclick="toggleSubmenu('mbSub'); return false;">👥 Management Board ▾</a>
+  <div id="mbSub" class="submenu" style="display: none;">
+    <a href="principal.html">Principal</a>
+    <a href="vice-principal.html">Vice Principal</a>
+    <a href="staff.html">Staff Members</a>
+  </div>
+  <a href="About-Us.html">ℹ️ About Us</a>
+  <a href="Courses.html">📚 Courses</a>
+  <a href="admission-info.html">📝 Admission</a>
+  <a href="#">📞 Contact</a>
+  <a href="#">👤 Committees</a>
+  <a href="#">🖼️ Photo Gallery</a>
+</div>
+
+<!-- ===== NAVIGATION (DESKTOP) ===== -->
+<nav class="desktop-nav">
+  <a href="index.html">🏠 Home</a>
+<nav>
+  <div class="has-submenu">
+    <a href="#">ℹ️ About Us</a>
+    <div class="submenu">
+      <a href="About_us/About_us.html">About the college</a>
+      <a href="Tarana-a-mumtaz/Tarana_a_mumtaz.html">तराना-ए-मुमताज़</a>
+      <a href="Golden Jubilee/Golden_jubli.html">Golden Jubilee</a>
+      <a href="Admission_Procedure.html">Admission Procedure</a>
+      <a href="Management_board/Management_board.html">👥 Management Board</a>
+      <a href="Committee/comittee.html">Committees</a>
+      <a href="Teaching & Non-teaching/Teaching_&_Non-teaching.html">
+        Teaching & Non-teaching staff
+      </a>
+
+      <!-- Student Committees with Submenu -->
+      <div class="has-submenu">
+        <a href="#">🎓 Student Committees</a>
+        <div class="submenu">
+          <a href="literary-society.html">📖 Literary Society</a>
+          <a href="commerce-association.html">💼 Commerce Association</a>
+        </div>
+      </div>
+      <a href="#">📞 Contact</a>
+    </div>
+  </div>
+</nav>
+<nav>
+<div class="has-submenu">
+    <a href="#">📚 Academics</a>
+    <div class="submenu">
+      
+      <div class="has-submenu">
+  <a href="#">🎨 Arts Faculty</a>
+  <div class="submenu">
+    <a href="Faculty of Art/Faculty of Arab culture/arab-culture.html">Department of Arab Culture</a>
+    <a href="english.html">Department of English</a>
+    <a href="history.html">Department of History</a>
+    <a href="Hindi.html">Department of Hindi</a>
+    <a href="persian.html">Department of Persian</a>
+    <a href="political-science.html">Department of Political Science</a>
+    <a href="sociology.html">Department of Sociology</a>
+    <a href="urdu.html">Department of Urdu</a>
+    <a href="physical-education.html">Department of Physical Education</a>
+  </div>
+</div>
+
+      
+        <a href="Commerce/commerce.html">💼 Commerce Faculty</a>
+        
+
+      <div class="has-submenu">
+  <a href="#">🔬 Science Faculty</a>
+  <div class="submenu">
+    <a href="Faculty of science/Department of botany/Department_of_Botany.html">Department of Botany</a>
+    <a href="chemistry.html">Department of Chemistry</a>
+    <a href="computer-science.html">Department of Computer Science</a>
+    <a href="mathematics.html">Department of Mathematics</a>
+    <a href="physics.html">Department of Physics</a>
+    <a href="zoology.html">Department of Zoology</a>
+  </div>
+</div>
+   <a href="nss.html">🪢 NSS</a>
+   <a href="ncc.html">🎖️ NCC</a>
+  <a href="library.html">📚 Library</a>
+</nav>
+
+  <a href="admission-info-1.html">📝 Admission</a>
+  <a href="Career/career.html">👤 Examination</a>
+  <!-- Student Corner -->
+<div class="has-submenu">
+  <a href="#" onclick="toggleSubmenu(this)">🎓 Career</a>
+  <div class="submenu">
+    <a href="literary-society.html">📖 Literary Society</a>
+    <a href="commerce-association.html">💼 Commerce Association</a>
+  </div>
+</div>
+  <a href="#">️📖NAAC/IQAC</a>
+    <a href="#">🖼️NIRF</a>
+  <a href="#">🖼️ Gallery</a>
+</nav>
+<!-- ===== JS ===== -->
+<script>
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.getElementById("mobileSidebar");
+    sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0px";
+  }
+
+  // Submenu toggle inside sidebar
+  function toggleSubmenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+  }
+</script>
+  <script>
+document.querySelectorAll(".has-submenu > a").forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    let parent = this.parentElement;
+    let submenu = parent.querySelector(".submenu");
+
+    if (!submenu) return;
+
+    if (submenu.style.display === "block") {
+      submenu.style.display = "none";
+      return;
+    }
+
+    let siblings = parent.parentElement.querySelectorAll(":scope > .has-submenu .submenu");
+    siblings.forEach(sib => {
+      if (sib !== submenu) sib.style.display = "none";
+    });
+
+    submenu.style.display = "block";
+  });
+});
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Department of SOCIOLOGY  - Mumtaz P.G. College</title>
+</head>
+<body>
+
+  <!-- Department Header -->
+  <div class="dept-header">
+    <h1>Department of SOCIOLOGY </h1>
+    <p>Faculty of Arts - Mumtaz P.G. College</p>
+  </div>
+
+  <!-- Main Container -->
+  <div class="dept-container">
+    <!-- Sidebar -->
+    <div class="dept-sidebar">
+      <button class="tab-btn active" onclick="showTab('about')">About</button>
+      <button class="tab-btn" onclick="showTab('hod')">Head of Department</button>
+      <button class="tab-btn" onclick="showTab('faculty')">Faculty Members</button>
+      <button class="tab-btn" onclick="showTab('programmes')">Programmes</button>
+      <button class="tab-btn" onclick="showTab('timetable')">Time Table</button>
+      <button class="tab-btn" onclick="showTab('notices')">Notices</button>
+      <button class="tab-btn" onclick="showTab('research')">Research & Achievements</button>
+    </div>
+
+    <!-- Content -->
+    <div class="dept-content">
+      <div id="about" class="tab-content active">
+        <h2>About the Department</h2>
+        <p>
+          The Department of SOCIOLOGY  at Mumtaz P.G. College is committed to 
+          promoting SOCIOLOGY  language, literature, and culture. It aims to 
+          strengthen linguistic skills and literary appreciation among students.
+        </p>
+      </div>
+
+     <      <div id="hod" class="tab-content">
+        <h2>Head of Department</h2>
+        <div class="hod-box">
+          <img src="Dr. Sheeba Siddiqui.jpg" alt="HOD SOCIOLOGY">
+          <h2>Dr. Sheeba Siddiqui</h2>
+          <p>Professor, Head of Department</p>
+          <p>Department of SOCIOLOGY</p>
+        </div>
+      </div>
+
+      <!-- Faculty -->
+      <div id="faculty" class="tab-content">
+        <h2>Faculty Members</h2>
+
+<div class="faculty-container">
+  <div class="faculty-card">
+    <img src="Dr. Sheeba Siddiqui.jpg" alt="Dr. Sheeba Siddiqui">
+    <h3>Dr. Sheeba Siddiqui</h3>
+    <p>Assistant Professor, H.O.D.</p>
+  </div>
+  <div class="faculty-card">
+            <img src="Dr. Saba Tabassum – Assistant Professor (on Leave).jpg alt="Dr. Saba Tabassum">
+            <h3>Dr. Saba Tabassum</h3>
+            <p>Assistant Professor.</p>
+          </div>
+           <div class="faculty-card">
+            <img src=" Dr. Lyaqat Ali.jpg alt="Dr. Lyaqat Ali  ">
+            <h3>Dr. Lyaqat Ali </h3>
+            <p>Assistant Professor,</p>
+          </div>
+          <div class="faculty-card">
+            <img src="Dr. Mohammad Habib.jpg alt="Dr. Mohammad Habib ">
+            <h3>Dr. Mohammad Habib </h3>
+            <p>Assistant Professor,</p>
+          </div>
+           <div class="faculty-card">
+            <img src="Dr. Shad Ahmad.jpg alt="Dr. Shad Ahmad">
+            <h3>Dr. Shad Ahmad</h3>
+            <p>Assistant Professor,</p>
+          </div>
+           <div class="faculty-card">
+            <img src="Dr. Alka Srivastava.jpg alt="Dr. Alka Srivastava">
+            <h3>Dr. Alka Srivastava</h3>
+            <p>Assistant Professor, H.O.D.</p>
+          </div>
+      </div>
+      </div>
+
+      <div id="programmes" class="tab-content">
+        <h2>Programmes Offered</h2>
+        <p>B.A. (SOCIOLOGY ), M.A. (SOCIOLOGY ), Research Programmes</p>
+      </div>
+
+      <div id="timetable" class="tab-content">
+        <h2>Time Table</h2>
+        <p>Coming Soon...</p>
+      </div>
+
+      <div id="notices" class="tab-content">
+        <h2>Notices</h2>
+        <p>No new notices.</p>
+      </div>
+
+      <div id="research" class="tab-content">
+        <h2>Research & Achievements</h2>
+        <p>
+          Faculty members have published research papers in the field of SOCIOLOGY  
+          literature and linguistics. The department organizes seminars, 
+          workshops, and literary competitions regularly.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS for Tabs -->
+  <script>
+    function showTab(tabId) {
+      let contents = document.querySelectorAll('.tab-content');
+      let buttons = document.querySelectorAll('.dept-sidebar button');
+      contents.forEach(c => c.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
