@@ -499,7 +499,7 @@ nav .has-submenu:hover .submenu {
   width: 35%;
   text-align: center;
   padding: 20px;
-  border-right: 8px solid maroon;
+  border-right: none; solid maroon;
 }
 .message-left img {
   width: 100%;
